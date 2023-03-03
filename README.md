@@ -1,5 +1,7 @@
 # Simple HTML5 (Typescript + pixi.js) Farm Game
 
+# [DEMO](https://github.com/volodalexey/simple-html5-farm-game/)
+
 Minimal functionality:
 - farm field 8x8
 - farm-cell can be one of: `corn`, `chicken`, `cow` or `empty`
