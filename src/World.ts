@@ -189,6 +189,7 @@ export class World {
   handleStatusBarClick = (tile: StatusBarTile): void => {
     if (tile.isSelected && tile.type === StatusBarTile.TYPES.corns) {
       if (tile.value >= 1) {
+        this.shopBar.deselectAll()
         this.setUIState(UIState.toFeedCorn)
       } else {
         this.statusBar.deselectAll()
@@ -207,6 +208,7 @@ export class World {
   }
 
   handleShopBarClick = (tile: ShopTile): void => {
+    this.statusBar.deselectAll()
     if (tile.isSelected) {
       if (tile.cost > 0 && this.statusBar.money >= tile.cost) {
         switch (tile.type) {

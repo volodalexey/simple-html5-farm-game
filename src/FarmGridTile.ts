@@ -129,6 +129,7 @@ export class FarmGridTile extends Tile {
     grassSprite.height = grassOptions.height
     grassSprite.position.x = xCenter + grassOptions.marginLeft
     grassSprite.position.y = yCenter + grassOptions.marginTop
+    grassSprite.alpha = 0.5
     this.addChild(grassSprite)
 
     const cornBuildableSprite = new Sprite(cornBuildableTextureResource)
@@ -386,9 +387,11 @@ export class FarmGridTile extends Tile {
     if (this.generateProgress != null) {
       this.generateProgress.update(this._generated)
       if (this._generated >= 1) {
-        this.generateProgress.initHeight = this.generateOptions.height * 5
-        this.generateProgress.initWidth = 2
+        this.generateProgress.initHeight = 10
+        this.generateProgress.initWidth = 10
+        this.generateProgress.alpha = 1
       } else {
+        this.generateProgress.alpha = 0.5
         this.generateProgress.initHeight = this.generateOptions.height
         this.generateProgress.initWidth = this.generateOptions.width
       }
