@@ -33,3 +33,13 @@ npm run serve
 ```
 
 ## Open browser at [http://localhost:8866](http://localhost:8866)
+
+## Assets
+- [Corn icon](https://thenounproject.com/icon/corn-1838227/)
+- [Egg icon](https://thenounproject.com/icon/egg-153392/)
+- [Money icon](https://thenounproject.com/icon/money-1524558/)
+- [Milk icon](https://thenounproject.com/icon/cow-milk-3263282/)
+- [Chicken](https://opengameart.org/sites/default/files/chicken_eat.png)
+- [Cow](https://opengameart.org/sites/default/files/cow_eat.png)
+- [Grass](https://butterymilk.itch.io/tiny-wonder-farm-asset-pack)
+- [Corn](https://danaida.itch.io/free-growing-plants-pack-32x32)

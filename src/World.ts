@@ -20,14 +20,12 @@ enum UIState {
 export class World {
   public app: Application<HTMLCanvasElement>
   public gameLoader: GameLoader
-  public scaleX = 1
-  public scaleY = 1
-  public aspectXRatio = 3
-  public aspectYRatio = 5
   public text!: Text
   public statusBar!: StatusBar
   public farmGrid!: FarmGrid
   public shopBar!: ShopBar
+  public resizeTimeoutId!: NodeJS.Timeout
+  public resizeTimeout = 300
 
   private _state = UIState.idle
 
@@ -45,10 +43,8 @@ export class World {
   }
 
   setupCanvas (): void {
-    document.body.style.cssText = 'padding: 0; margin: 0;'
-    this.app.view.style.cssText = 'display: block;'
     document.body.appendChild(this.app.view)
-    window.addEventListener('resize', this.resizeHandler)
+    window.addEventListener('resize', this.resizeDeBounce)
   }
 
   setupLayout (): void {
@@ -75,6 +71,7 @@ export class World {
       },
       onTileClick: this.handleFramGridClick
     })
+    this.farmGrid.y = this.statusBar.y + this.statusBar.totalHeight
     this.app.stage.addChild(this.farmGrid)
     this.shopBar = new ShopBar({
       textures: {
@@ -86,37 +83,55 @@ export class World {
       onTileClick: this.handleShopBarClick
     })
     this.app.stage.addChild(this.shopBar)
+    this.shopBar.y = this.farmGrid.y + this.farmGrid.totalHeight
   }
 
-  resizeHandler = (): void => {
-    const { view } = this.app
-    view.width = window.innerWidth
-    view.height = window.innerHeight
-    let availableWidth = view.width
-    let availableHeight = view.height
-    if (availableWidth > availableHeight) {
-      logFarmLayout(`ww=${availableWidth} > wh=${availableHeight}`)
-      availableWidth = Math.floor(availableHeight / this.aspectYRatio) * this.aspectXRatio
-    } else if (availableWidth < availableHeight) {
-      logFarmLayout(`ww=${availableWidth} < wh=${availableHeight}`)
-      availableHeight = Math.floor(availableWidth / this.aspectXRatio) * this.aspectYRatio
-    }
-    this.scaleX = availableWidth / this.farmGrid.totalWidth
-    this.scaleY = availableHeight / (this.statusBar.totalHeight + this.farmGrid.totalHeight + this.shopBar.totalHeight)
-    logFarmLayout(`aw=${availableWidth} ah=${availableHeight} sx=${this.scaleX} sy=${this.scaleY}`)
+  resizeDeBounce = (): void => {
+    this.cancelScheduledResizeHandler()
+    this.scheduleResizeHandler()
+  }
 
-    const x = view.width > availableWidth ? (view.width - availableWidth) / 2 : 0
-    const y = view.height > availableHeight ? (view.height - availableHeight) / 2 : 0
-    this.statusBar.x = x
-    this.statusBar.y = y
-    this.farmGrid.x = x
-    this.farmGrid.y = this.statusBar.y + this.statusBar.totalHeight * this.scaleY
-    this.shopBar.x = x
-    this.shopBar.y = this.farmGrid.y + this.farmGrid.totalHeight * this.scaleY
-    logFarmLayout(`stx=${this.statusBar.x} sty=${this.statusBar.y} grx=${this.farmGrid.x} gry=${this.farmGrid.y} spx=${this.shopBar.x} spy=${this.shopBar.y}`)
-    this.statusBar.scale.set(this.scaleX, this.scaleY)
-    this.farmGrid.scale.set(this.scaleX, this.scaleY)
-    this.shopBar.scale.set(this.scaleX, this.scaleY)
+  cancelScheduledResizeHandler (): void {
+    clearTimeout(this.resizeTimeoutId)
+  }
+
+  scheduleResizeHandler (): void {
+    this.resizeTimeoutId = setTimeout(() => {
+      this.cancelScheduledResizeHandler()
+      this.resizeHandler()
+    }, this.resizeTimeout)
+  }
+
+  resizeHandler (): void {
+    const { view } = this.app
+    const availableWidth = view.width
+    const availableHeight = view.height
+    const totalWidth = this.farmGrid.totalWidth
+    const totalHeight = (this.statusBar.totalHeight + this.farmGrid.totalHeight + this.shopBar.totalHeight)
+    let scale = 1
+    if (totalHeight >= totalWidth) {
+      scale = availableHeight / totalHeight
+      if (scale * totalWidth > availableWidth) {
+        scale = availableWidth / totalWidth
+      }
+      logFarmLayout(`By height (sc=${scale})`)
+    } else {
+      scale = availableWidth / totalWidth
+      logFarmLayout(`By width (sc=${scale})`)
+      if (scale * totalHeight > availableHeight) {
+        scale = availableHeight / totalHeight
+      }
+    }
+    const occupiedWidth = Math.floor(totalWidth * scale)
+    const occupiedHeight = Math.floor(totalHeight * scale)
+    const x = availableWidth > occupiedWidth ? (availableWidth - occupiedWidth) / 2 : 0
+    const y = availableHeight > occupiedHeight ? (availableHeight - occupiedHeight) / 2 : 0
+    logFarmLayout(`aw=${availableWidth} (ow=${occupiedWidth}) x=${x} ah=${availableHeight} (oh=${occupiedHeight}) y=${y}`)
+    this.app.stage.x = x
+    this.app.stage.width = occupiedWidth
+    this.app.stage.y = y
+    this.app.stage.height = occupiedHeight
+    logFarmLayout(`x=${x} y=${y} stgw=${this.app.stage.width} stgh=${this.app.stage.height}`)
   }
 
   handleFramGridClick = (tile: FarmGridTile): void => {

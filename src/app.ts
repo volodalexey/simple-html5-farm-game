@@ -9,8 +9,8 @@ async function run (): Promise<void> {
   const app = new Application({
     width: window.innerWidth,
     height: window.innerHeight,
-    backgroundColor: 0xe6e7ea
-    // resolution: window.devicePixelRatio > 0 ? window.devicePixelRatio : 1
+    backgroundColor: 0xe6e7ea,
+    resizeTo: window
   })
   const world = new World({ app, gameLoader })
   world.setup()
