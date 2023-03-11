@@ -160,10 +160,10 @@ class FarmGridTile extends Tile_1.Tile {
         this._generated = 0;
         this._food = 1;
         this.grassOptions = {
-            width: 46,
-            height: 46,
-            marginLeft: -23,
-            marginTop: -23
+            width: 40,
+            height: 40,
+            marginLeft: -20,
+            marginTop: -20
         };
         this.cornOptions = {
             width: 26,
@@ -192,16 +192,16 @@ class FarmGridTile extends Tile_1.Tile {
             eatFactor: 1 / 20 / 1000
         };
         this.foodOptions = {
-            width: 26,
+            width: 30,
             height: 3,
-            marginLeft: -16,
-            marginTop: 8
+            marginLeft: -15,
+            marginTop: 10
         };
         this.generateOptions = {
-            width: 26,
+            width: 30,
             height: 3,
-            marginLeft: -16,
-            marginTop: -18
+            marginLeft: -15,
+            marginTop: -13
         };
         this.rectOptions = {
             width: 30,
@@ -973,40 +973,11 @@ var UIState;
 })(UIState || (UIState = {}));
 class World {
     constructor({ app, gameLoader }) {
-        this.scaleX = 1;
-        this.scaleY = 1;
-        this.aspectXRatio = 3;
-        this.aspectYRatio = 5;
+        this.resizeTimeout = 300;
         this._state = UIState.idle;
-        this.resizeHandler = () => {
-            const { view } = this.app;
-            view.width = window.innerWidth;
-            view.height = window.innerHeight;
-            let availableWidth = view.width;
-            let availableHeight = view.height;
-            if (availableWidth > availableHeight) {
-                (0, logger_1.logFarmLayout)(`ww=${availableWidth} > wh=${availableHeight}`);
-                availableWidth = Math.floor(availableHeight / this.aspectYRatio) * this.aspectXRatio;
-            }
-            else if (availableWidth < availableHeight) {
-                (0, logger_1.logFarmLayout)(`ww=${availableWidth} < wh=${availableHeight}`);
-                availableHeight = Math.floor(availableWidth / this.aspectXRatio) * this.aspectYRatio;
-            }
-            this.scaleX = availableWidth / this.farmGrid.totalWidth;
-            this.scaleY = availableHeight / (this.statusBar.totalHeight + this.farmGrid.totalHeight + this.shopBar.totalHeight);
-            (0, logger_1.logFarmLayout)(`aw=${availableWidth} ah=${availableHeight} sx=${this.scaleX} sy=${this.scaleY}`);
-            const x = view.width > availableWidth ? (view.width - availableWidth) / 2 : 0;
-            const y = view.height > availableHeight ? (view.height - availableHeight) / 2 : 0;
-            this.statusBar.x = x;
-            this.statusBar.y = y;
-            this.farmGrid.x = x;
-            this.farmGrid.y = this.statusBar.y + this.statusBar.totalHeight * this.scaleY;
-            this.shopBar.x = x;
-            this.shopBar.y = this.farmGrid.y + this.farmGrid.totalHeight * this.scaleY;
-            (0, logger_1.logFarmLayout)(`stx=${this.statusBar.x} sty=${this.statusBar.y} grx=${this.farmGrid.x} gry=${this.farmGrid.y} spx=${this.shopBar.x} spy=${this.shopBar.y}`);
-            this.statusBar.scale.set(this.scaleX, this.scaleY);
-            this.farmGrid.scale.set(this.scaleX, this.scaleY);
-            this.shopBar.scale.set(this.scaleX, this.scaleY);
+        this.resizeDeBounce = () => {
+            this.cancelScheduledResizeHandler();
+            this.scheduleResizeHandler();
         };
         this.handleFramGridClick = (tile) => {
             switch (this._state) {
@@ -1135,10 +1106,8 @@ class World {
         this.resizeHandler();
     }
     setupCanvas() {
-        document.body.style.cssText = 'padding: 0; margin: 0;';
-        this.app.view.style.cssText = 'display: block;';
         document.body.appendChild(this.app.view);
-        window.addEventListener('resize', this.resizeHandler);
+        window.addEventListener('resize', this.resizeDeBounce);
     }
     setupLayout() {
         const { textures, animations } = this.gameLoader.spritesheet;
@@ -1164,6 +1133,7 @@ class World {
             },
             onTileClick: this.handleFramGridClick
         });
+        this.farmGrid.y = this.statusBar.y + this.statusBar.totalHeight;
         this.app.stage.addChild(this.farmGrid);
         this.shopBar = new ShopBar_1.ShopBar({
             textures: {
@@ -1175,6 +1145,48 @@ class World {
             onTileClick: this.handleShopBarClick
         });
         this.app.stage.addChild(this.shopBar);
+        this.shopBar.y = this.farmGrid.y + this.farmGrid.totalHeight;
+    }
+    cancelScheduledResizeHandler() {
+        clearTimeout(this.resizeTimeoutId);
+    }
+    scheduleResizeHandler() {
+        this.resizeTimeoutId = setTimeout(() => {
+            this.cancelScheduledResizeHandler();
+            this.resizeHandler();
+        }, this.resizeTimeout);
+    }
+    resizeHandler() {
+        const { view } = this.app;
+        const availableWidth = view.width;
+        const availableHeight = view.height;
+        const totalWidth = this.farmGrid.totalWidth;
+        const totalHeight = (this.statusBar.totalHeight + this.farmGrid.totalHeight + this.shopBar.totalHeight);
+        let scale = 1;
+        if (totalHeight >= totalWidth) {
+            scale = availableHeight / totalHeight;
+            if (scale * totalWidth > availableWidth) {
+                scale = availableWidth / totalWidth;
+            }
+            (0, logger_1.logFarmLayout)(`By height (sc=${scale})`);
+        }
+        else {
+            scale = availableWidth / totalWidth;
+            (0, logger_1.logFarmLayout)(`By width (sc=${scale})`);
+            if (scale * totalHeight > availableHeight) {
+                scale = availableHeight / totalHeight;
+            }
+        }
+        const occupiedWidth = Math.floor(totalWidth * scale);
+        const occupiedHeight = Math.floor(totalHeight * scale);
+        const x = availableWidth > occupiedWidth ? (availableWidth - occupiedWidth) / 2 : 0;
+        const y = availableHeight > occupiedHeight ? (availableHeight - occupiedHeight) / 2 : 0;
+        (0, logger_1.logFarmLayout)(`aw=${availableWidth} (ow=${occupiedWidth}) x=${x} ah=${availableHeight} (oh=${occupiedHeight}) y=${y}`);
+        this.app.stage.x = x;
+        this.app.stage.width = occupiedWidth;
+        this.app.stage.y = y;
+        this.app.stage.height = occupiedHeight;
+        (0, logger_1.logFarmLayout)(`x=${x} y=${y} stgw=${this.app.stage.width} stgh=${this.app.stage.height}`);
     }
     setUIState(state) {
         switch (state) {
@@ -1219,8 +1231,8 @@ async function run() {
     const app = new pixi_js_1.Application({
         width: window.innerWidth,
         height: window.innerHeight,
-        backgroundColor: 0xe6e7ea
-        // resolution: window.devicePixelRatio > 0 ? window.devicePixelRatio : 1
+        backgroundColor: 0xe6e7ea,
+        resizeTo: window
     });
     const world = new World_1.World({ app, gameLoader });
     world.setup();
@@ -1601,7 +1613,7 @@ Tile.COLORS = {
 /******/ 			return __webpack_require__.O(result);
 /******/ 		}
 /******/ 		
-/******/ 		var chunkLoadingGlobal = self["webpackChunktest_farm"] = self["webpackChunktest_farm"] || [];
+/******/ 		var chunkLoadingGlobal = self["webpackChunksimple_html5_farm_game"] = self["webpackChunksimple_html5_farm_game"] || [];
 /******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
 /******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
 /******/ 	})();
