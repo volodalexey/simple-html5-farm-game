@@ -1,436 +1,515 @@
 {
-	"frames": {
-		"chicken-001.png": {
-			"frame": {
-				"x": 48,
-				"y": 0,
-				"w": 32,
-				"h": 32
-			},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {
-				"x": 0,
-				"y": 0,
-				"w": 32,
-				"h": 32
-			},
-			"sourceSize": {
-				"w": 32,
-				"h": 32
-			}
-		},
-		"chicken-002.png": {
-			"frame": {
-				"x": 80,
-				"y": 0,
-				"w": 32,
-				"h": 32
-			},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {
-				"x": 0,
-				"y": 0,
-				"w": 32,
-				"h": 32
-			},
-			"sourceSize": {
-				"w": 32,
-				"h": 32
-			}
-		},
-		"chicken-003.png": {
-			"frame": {
-				"x": 112,
-				"y": 0,
-				"w": 32,
-				"h": 32
-			},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {
-				"x": 0,
-				"y": 0,
-				"w": 32,
-				"h": 32
-			},
-			"sourceSize": {
-				"w": 32,
-				"h": 32
-			}
-		},
-		"chicken-004.png": {
-			"frame": {
-				"x": 144,
-				"y": 0,
-				"w": 32,
-				"h": 32
-			},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {
-				"x": 0,
-				"y": 0,
-				"w": 32,
-				"h": 32
-			},
-			"sourceSize": {
-				"w": 32,
-				"h": 32
-			}
-		},
-		"corn-001.png": {
-			"frame": {
-				"x": 176,
-				"y": 0,
-				"w": 32,
-				"h": 32
-			},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {
-				"x": 0,
-				"y": 0,
-				"w": 32,
-				"h": 32
-			},
-			"sourceSize": {
-				"w": 32,
-				"h": 32
-			}
-		},
-		"corn-002.png": {
-			"frame": {
-				"x": 208,
-				"y": 0,
-				"w": 32,
-				"h": 32
-			},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {
-				"x": 0,
-				"y": 0,
-				"w": 32,
-				"h": 32
-			},
-			"sourceSize": {
-				"w": 32,
-				"h": 32
-			}
-		},
-		"corn-003.png": {
-			"frame": {
-				"x": 240,
-				"y": 0,
-				"w": 32,
-				"h": 32
-			},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {
-				"x": 0,
-				"y": 0,
-				"w": 32,
-				"h": 32
-			},
-			"sourceSize": {
-				"w": 32,
-				"h": 32
-			}
-		},
-		"corn-004.png": {
-			"frame": {
-				"x": 272,
-				"y": 0,
-				"w": 32,
-				"h": 32
-			},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {
-				"x": 0,
-				"y": 0,
-				"w": 32,
-				"h": 32
-			},
-			"sourceSize": {
-				"w": 32,
-				"h": 32
-			}
-		},
-		"cow-001.png": {
-			"frame": {
-				"x": 0,
-				"y": 48,
-				"w": 80,
-				"h": 80
-			},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {
-				"x": 0,
-				"y": 0,
-				"w": 80,
-				"h": 80
-			},
-			"sourceSize": {
-				"w": 80,
-				"h": 80
-			}
-		},
-		"cow-002.png": {
-			"frame": {
-				"x": 80,
-				"y": 48,
-				"w": 80,
-				"h": 80
-			},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {
-				"x": 0,
-				"y": 0,
-				"w": 80,
-				"h": 80
-			},
-			"sourceSize": {
-				"w": 80,
-				"h": 80
-			}
-		},
-		"cow-003.png": {
-			"frame": {
-				"x": 160,
-				"y": 48,
-				"w": 80,
-				"h": 80
-			},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {
-				"x": 0,
-				"y": 0,
-				"w": 80,
-				"h": 80
-			},
-			"sourceSize": {
-				"w": 80,
-				"h": 80
-			}
-		},
-		"cow-004.png": {
-			"frame": {
-				"x": 240,
-				"y": 48,
-				"w": 80,
-				"h": 80
-			},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {
-				"x": 0,
-				"y": 0,
-				"w": 80,
-				"h": 80
-			},
-			"sourceSize": {
-				"w": 80,
-				"h": 80
-			}
-		},
-		"grass.png": {
-			"frame": {
-				"x": 0,
-				"y": 0,
-				"w": 48,
-				"h": 48
-			},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {
-				"x": 0,
-				"y": 0,
-				"w": 48,
-				"h": 48
-			},
-			"sourceSize": {
-				"w": 48,
-				"h": 48
-			}
-		},
-		"icon-milk.png": {
-			"frame": {
-				"x": 0,
-				"y": 128,
-				"w": 40,
-				"h": 60
-			},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {
-				"x": 0,
-				"y": 0,
-				"w": 40,
-				"h": 60
-			},
-			"sourceSize": {
-				"w": 40,
-				"h": 60
-			}
-		},
-		"icon-money.png": {
-			"frame": {
-				"x": 40,
-				"y": 128,
-				"w": 40,
-				"h": 60
-			},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {
-				"x": 0,
-				"y": 0,
-				"w": 40,
-				"h": 60
-			},
-			"sourceSize": {
-				"w": 40,
-				"h": 60
-			}
-		},
-		"icon-egg.png": {
-			"frame": {
-				"x": 80,
-				"y": 128,
-				"w": 40,
-				"h": 60
-			},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {
-				"x": 0,
-				"y": 0,
-				"w": 40,
-				"h": 60
-			},
-			"sourceSize": {
-				"w": 40,
-				"h": 60
-			}
-		},
-		"icon-corn.png": {
-			"frame": {
-				"x": 120,
-				"y": 128,
-				"w": 40,
-				"h": 60
-			},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {
-				"x": 0,
-				"y": 0,
-				"w": 40,
-				"h": 60
-			},
-			"sourceSize": {
-				"w": 40,
-				"h": 60
-			}
-		},
-		"cow-mask.png": {
-			"frame": {
-				"x": 0,
-				"y": 188,
-				"w": 80,
-				"h": 80
-			},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {
-				"x": 0,
-				"y": 0,
-				"w": 80,
-				"h": 80
-			},
-			"sourceSize": {
-				"w": 80,
-				"h": 80
-			}
-		},
-		"chicken-mask.png": {
-			"frame": {
-				"x": 80,
-				"y": 188,
-				"w": 32,
-				"h": 32
-			},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {
-				"x": 0,
-				"y": 0,
-				"w": 32,
-				"h": 32
-			},
-			"sourceSize": {
-				"w": 32,
-				"h": 32
-			}
-		},
-		"corn-mask.png": {
-			"frame": {
-				"x": 112,
-				"y": 188,
-				"w": 32,
-				"h": 32
-			},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {
-				"x": 0,
-				"y": 0,
-				"w": 32,
-				"h": 32
-			},
-			"sourceSize": {
-				"w": 32,
-				"h": 32
-			}
-		}
-	},
+  "frames": {
+    "cow-000.png": {
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 71,
+        "h": 44
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 4,
+        "y": 18,
+        "w": 71,
+        "h": 44
+      },
+      "sourceSize": {
+        "w": 80,
+        "h": 80
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "cow-mask.png": {
+      "frame": {
+        "x": 0,
+        "y": 44,
+        "w": 71,
+        "h": 44
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 4,
+        "y": 18,
+        "w": 71,
+        "h": 44
+      },
+      "sourceSize": {
+        "w": 80,
+        "h": 80
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "cow-001.png": {
+      "frame": {
+        "x": 71,
+        "y": 0,
+        "w": 71,
+        "h": 42
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 4,
+        "y": 20,
+        "w": 71,
+        "h": 42
+      },
+      "sourceSize": {
+        "w": 80,
+        "h": 80
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "cow-003.png": {
+      "frame": {
+        "x": 71,
+        "y": 42,
+        "w": 68,
+        "h": 42
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 4,
+        "y": 20,
+        "w": 68,
+        "h": 42
+      },
+      "sourceSize": {
+        "w": 80,
+        "h": 80
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "cow-002.png": {
+      "frame": {
+        "x": 0,
+        "y": 88,
+        "w": 68,
+        "h": 42
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 4,
+        "y": 20,
+        "w": 68,
+        "h": 42
+      },
+      "sourceSize": {
+        "w": 80,
+        "h": 80
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "icon-corn.png": {
+      "frame": {
+        "x": 0,
+        "y": 130,
+        "w": 30,
+        "h": 48
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 5,
+        "y": 6,
+        "w": 30,
+        "h": 48
+      },
+      "sourceSize": {
+        "w": 40,
+        "h": 60
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "icon-egg.png": {
+      "frame": {
+        "x": 30,
+        "y": 130,
+        "w": 32,
+        "h": 47
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 4,
+        "y": 7,
+        "w": 32,
+        "h": 47
+      },
+      "sourceSize": {
+        "w": 40,
+        "h": 60
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "icon-money.png": {
+      "frame": {
+        "x": 62,
+        "y": 130,
+        "w": 36,
+        "h": 46
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 7,
+        "w": 36,
+        "h": 46
+      },
+      "sourceSize": {
+        "w": 40,
+        "h": 60
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "icon-milk.png": {
+      "frame": {
+        "x": 71,
+        "y": 84,
+        "w": 24,
+        "h": 46
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 8,
+        "y": 7,
+        "w": 24,
+        "h": 46
+      },
+      "sourceSize": {
+        "w": 40,
+        "h": 60
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "grass.png": {
+      "frame": {
+        "x": 98,
+        "y": 84,
+        "w": 40,
+        "h": 38
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 4,
+        "y": 5,
+        "w": 40,
+        "h": 38
+      },
+      "sourceSize": {
+        "w": 48,
+        "h": 48
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "chicken-001.png": {
+      "frame": {
+        "x": 98,
+        "y": 122,
+        "w": 32,
+        "h": 23
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 7,
+        "w": 32,
+        "h": 23
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "corn-mask.png": {
+      "frame": {
+        "x": 98,
+        "y": 145,
+        "w": 19,
+        "h": 32
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 7,
+        "y": 0,
+        "w": 19,
+        "h": 32
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "corn-003.png": {
+      "frame": {
+        "x": 117,
+        "y": 145,
+        "w": 19,
+        "h": 32
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 7,
+        "y": 0,
+        "w": 19,
+        "h": 32
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "corn-002.png": {
+      "frame": {
+        "x": 142,
+        "y": 0,
+        "w": 19,
+        "h": 32
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 7,
+        "y": 0,
+        "w": 19,
+        "h": 32
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "corn-001.png": {
+      "frame": {
+        "x": 142,
+        "y": 32,
+        "w": 19,
+        "h": 32
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 7,
+        "y": 0,
+        "w": 19,
+        "h": 32
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "corn-000.png": {
+      "frame": {
+        "x": 139,
+        "y": 64,
+        "w": 19,
+        "h": 32
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 7,
+        "y": 0,
+        "w": 19,
+        "h": 32
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "chicken-002.png": {
+      "frame": {
+        "x": 161,
+        "y": 0,
+        "w": 32,
+        "h": 24
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 6,
+        "w": 32,
+        "h": 24
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "chicken-mask.png": {
+      "frame": {
+        "x": 161,
+        "y": 24,
+        "w": 30,
+        "h": 27
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 3,
+        "w": 30,
+        "h": 27
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "chicken-000.png": {
+      "frame": {
+        "x": 161,
+        "y": 51,
+        "w": 30,
+        "h": 27
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 3,
+        "w": 30,
+        "h": 27
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "chicken-003.png": {
+      "frame": {
+        "x": 98,
+        "y": 122,
+        "w": 32,
+        "h": 23
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 7,
+        "w": 32,
+        "h": 23
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    }
+  },
 	"animations": {
 		"chicken": [
+			"chicken-000.png",
 			"chicken-001.png",
 			"chicken-002.png",
-			"chicken-003.png",
-			"chicken-004.png"
+			"chicken-003.png"
 		],
 		"corn": [
+			"corn-000.png",
 			"corn-001.png",
 			"corn-002.png",
-			"corn-003.png",
-			"corn-004.png"
+			"corn-003.png"
 		],
 		"cow": [
+			"cow-000.png",
 			"cow-001.png",
 			"cow-002.png",
-			"cow-003.png",
-			"cow-004.png"
+			"cow-003.png"
 		]
 	},
-	"meta": {
-		"app": "https://www.codeandweb.com/texturepacker",
-		"version": "1.1",
-		"image": "spritesheet.png",
-		"format": "RGBA8888",
-		"size": {
-			"w": 320,
-			"h": 128
-		},
-		"scale": "1",
-		"smartupdate": "$TexturePacker:SmartUpdate:b609b1df4d20cde1b9712beae579566a:363187f5402f272c73e488ad0cc135a2:56d096f28b74e333539ca6a39c24e6ee$"
-	}
+  "meta": {
+    "app": "http://free-tex-packer.com",
+    "version": "0.6.7",
+    "image": "spritesheet.png",
+    "format": "RGBA8888",
+    "size": {
+      "w": 193,
+      "h": 178
+    },
+    "scale": 1
+  }
 }

@@ -1,4 +1,4 @@
-(self["webpackChunktest_farm"] = self["webpackChunktest_farm"] || []).push([["vendor"],{
+(self["webpackChunksimple_html5_farm_game"] = self["webpackChunksimple_html5_farm_game"] || []).push([["vendor"],{
 
 /***/ "./node_modules/@pixi/accessibility/lib/AccessibilityManager.js":
 /*!**********************************************************************!*\
