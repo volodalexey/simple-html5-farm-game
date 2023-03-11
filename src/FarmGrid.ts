@@ -1,4 +1,4 @@
-import { Container, type Resource, type Texture } from 'pixi.js'
+import { Container, type Texture } from 'pixi.js'
 import { FarmGridTile } from './FarmGridTile'
 import { logFarmGrid } from './logger'
 
@@ -10,13 +10,13 @@ import { logFarmGrid } from './logger'
 
 export interface IFarmGridOptions {
   textures: {
-    grass: Texture<Resource>
-    cornMask: Texture<Resource>
-    chickenMask: Texture<Resource>
-    cowMask: Texture<Resource>
-    cornAnimated: Array<Texture<Resource>>
-    chickenAnimated: Array<Texture<Resource>>
-    cowAnimated: Array<Texture<Resource>>
+    grass: Texture
+    cornMask: Texture
+    chickenMask: Texture
+    cowMask: Texture
+    cornAnimated: Texture[]
+    chickenAnimated: Texture[]
+    cowAnimated: Texture[]
   }
   onTileClick?: (tile: FarmGridTile, farmGrid: FarmGrid) => void
 }

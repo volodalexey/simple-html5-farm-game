@@ -4,7 +4,7 @@ import { type ITileOptions, Tile } from './models/Tile'
 export interface IStatusBarTileOptions extends ITileOptions {
   type: StatusType
   value: number
-  iconTextureResource: Texture<Resource>
+  iconTextureResource: Texture
 }
 
 enum StatusType {

@@ -4,8 +4,8 @@ import { Tile, type ITileOptions } from './models/Tile'
 export interface IShopTileOptions extends ITileOptions {
   type: ShopTileType
   cost: number
-  moneyTextureResource: Texture<Resource>
-  itemTextureResource: Texture<Resource>
+  moneyTextureResource: Texture
+  itemTextureResource: Texture
   iconOptions: {
     width: number
     height: number

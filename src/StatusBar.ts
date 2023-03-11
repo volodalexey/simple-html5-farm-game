@@ -5,10 +5,10 @@ import { StatusBarTile } from './StatusBarTile'
 
 export interface IStatusBarOptions {
   textures: {
-    money: Texture<Resource>
-    corn: Texture<Resource>
-    egg: Texture<Resource>
-    milk: Texture<Resource>
+    money: Texture
+    corn: Texture
+    egg: Texture
+    milk: Texture
   }
   onTileClick?: (tile: StatusBarTile, shopBar: StatusBar) => void
 }
@@ -71,7 +71,7 @@ export class StatusBar extends Container<StatusBarTile> {
       2: StatusBarTile.TYPES.eggs,
       3: StatusBarTile.TYPES.milks
     }
-    const idxToTexture: Record<string, Texture<Resource>> = {
+    const idxToTexture: Record<string, Texture> = {
       0: money,
       1: corn,
       2: egg,

@@ -5,10 +5,10 @@ import { ShopTile } from './ShopTile'
 
 export interface IShopBarOptions {
   textures: {
-    money: Texture<Resource>
-    corn: Texture<Resource>
-    chicken: Texture<Resource>
-    cow: Texture<Resource>
+    money: Texture
+    corn: Texture
+    chicken: Texture
+    cow: Texture
   }
   onTileClick?: (tile: ShopTile, shopBar: ShopBar) => void
 }
@@ -83,7 +83,7 @@ export class ShopBar extends Container<ShopTile> {
       1: ShopTile.TYPES.chicken,
       2: ShopTile.TYPES.cow
     }
-    const idxToTexture: Record<string, Texture<Resource>> = {
+    const idxToTexture: Record<string, Texture> = {
       0: corn,
       1: chicken,
       2: cow

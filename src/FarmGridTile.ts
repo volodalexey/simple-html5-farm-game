@@ -1,16 +1,16 @@
-import { type Resource, type Texture, Sprite, AnimatedSprite } from 'pixi.js'
+import { type Texture, Sprite, AnimatedSprite } from 'pixi.js'
 import { ProgressBar } from './models/ProgressBar'
 import { StrokeRect } from './models/StrokeRect'
 import { type ITileOptions, Tile } from './models/Tile'
 
 export interface IFarmGridTileOptions extends ITileOptions {
-  grassTextureResource: Texture<Resource>
-  cornBuildableTextureResource: Texture<Resource>
-  chickenBuildableTextureResource: Texture<Resource>
-  cowBuildableTextureResource: Texture<Resource>
-  cornAnimatedTextureResources: Array<Texture<Resource>>
-  chickenAnimatedTextureResources: Array<Texture<Resource>>
-  cowAnimatedTextureResources: Array<Texture<Resource>>
+  grassTextureResource: Texture
+  cornBuildableTextureResource: Texture
+  chickenBuildableTextureResource: Texture
+  cowBuildableTextureResource: Texture
+  cornAnimatedTextureResources: Texture[]
+  chickenAnimatedTextureResources: Texture[]
+  cowAnimatedTextureResources: Texture[]
 }
 
 enum FarmType {

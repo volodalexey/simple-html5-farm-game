@@ -1,4 +1,4 @@
-# Simple HTML5 (Typescript + pixi.js) Farm Game
+# Simple HTML5 (Typescript + PixiJS) Farm Game
 
 # [DEMO](https://volodalexey.github.io/simple-html5-farm-game/)
 
