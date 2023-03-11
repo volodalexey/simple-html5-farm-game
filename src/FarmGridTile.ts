@@ -42,10 +42,10 @@ export class FarmGridTile extends Tile {
   public generateProgress?: ProgressBar
   public rectGraphics!: StrokeRect
   public grassOptions = {
-    width: 46,
-    height: 46,
-    marginLeft: -23,
-    marginTop: -23
+    width: 40,
+    height: 40,
+    marginLeft: -20,
+    marginTop: -20
   }
 
   public cornOptions = {
@@ -78,17 +78,17 @@ export class FarmGridTile extends Tile {
   }
 
   public foodOptions = {
-    width: 26,
+    width: 30,
     height: 3,
-    marginLeft: -16,
-    marginTop: 8
+    marginLeft: -15,
+    marginTop: 10
   }
 
   public generateOptions = {
-    width: 26,
+    width: 30,
     height: 3,
-    marginLeft: -16,
-    marginTop: -18
+    marginLeft: -15,
+    marginTop: -13
   }
 
   public rectOptions = {

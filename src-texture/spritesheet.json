@@ -481,26 +481,6 @@
       }
     }
   },
-	"animations": {
-		"chicken": [
-			"chicken-000.png",
-			"chicken-001.png",
-			"chicken-002.png",
-			"chicken-003.png"
-		],
-		"corn": [
-			"corn-000.png",
-			"corn-001.png",
-			"corn-002.png",
-			"corn-003.png"
-		],
-		"cow": [
-			"cow-000.png",
-			"cow-001.png",
-			"cow-002.png",
-			"cow-003.png"
-		]
-	},
   "meta": {
     "app": "http://free-tex-packer.com",
     "version": "0.6.7",

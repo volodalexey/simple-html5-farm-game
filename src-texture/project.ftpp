@@ -1,0 +1,136 @@
+{
+  "meta": {
+    "version": "0.6.7"
+  },
+  "savePath": "/mnt/mystorage/js_projects/simple-html5-farm-game/src-texture",
+  "images": [
+    {
+      "name": "chicken-000.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-farm-game/src-texture/chicken-000.png",
+      "folder": ""
+    },
+    {
+      "name": "chicken-001.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-farm-game/src-texture/chicken-001.png",
+      "folder": ""
+    },
+    {
+      "name": "chicken-002.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-farm-game/src-texture/chicken-002.png",
+      "folder": ""
+    },
+    {
+      "name": "chicken-003.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-farm-game/src-texture/chicken-003.png",
+      "folder": ""
+    },
+    {
+      "name": "chicken-mask.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-farm-game/src-texture/chicken-mask.png",
+      "folder": ""
+    },
+    {
+      "name": "corn-000.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-farm-game/src-texture/corn-000.png",
+      "folder": ""
+    },
+    {
+      "name": "corn-001.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-farm-game/src-texture/corn-001.png",
+      "folder": ""
+    },
+    {
+      "name": "corn-002.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-farm-game/src-texture/corn-002.png",
+      "folder": ""
+    },
+    {
+      "name": "corn-003.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-farm-game/src-texture/corn-003.png",
+      "folder": ""
+    },
+    {
+      "name": "corn-mask.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-farm-game/src-texture/corn-mask.png",
+      "folder": ""
+    },
+    {
+      "name": "cow-000.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-farm-game/src-texture/cow-000.png",
+      "folder": ""
+    },
+    {
+      "name": "cow-001.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-farm-game/src-texture/cow-001.png",
+      "folder": ""
+    },
+    {
+      "name": "cow-002.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-farm-game/src-texture/cow-002.png",
+      "folder": ""
+    },
+    {
+      "name": "cow-003.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-farm-game/src-texture/cow-003.png",
+      "folder": ""
+    },
+    {
+      "name": "cow-mask.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-farm-game/src-texture/cow-mask.png",
+      "folder": ""
+    },
+    {
+      "name": "grass.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-farm-game/src-texture/grass.png",
+      "folder": ""
+    },
+    {
+      "name": "icon-corn.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-farm-game/src-texture/icon-corn.png",
+      "folder": ""
+    },
+    {
+      "name": "icon-egg.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-farm-game/src-texture/icon-egg.png",
+      "folder": ""
+    },
+    {
+      "name": "icon-milk.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-farm-game/src-texture/icon-milk.png",
+      "folder": ""
+    },
+    {
+      "name": "icon-money.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-farm-game/src-texture/icon-money.png",
+      "folder": ""
+    }
+  ],
+  "folders": [],
+  "packOptions": {
+    "textureName": "spritesheet",
+    "textureFormat": "png",
+    "removeFileExtension": false,
+    "prependFolderName": true,
+    "base64Export": false,
+    "tinify": false,
+    "tinifyKey": "",
+    "scale": 1,
+    "filter": "none",
+    "exporter": "pixi.js",
+    "fileName": "pack-result",
+    "savePath": "/mnt/mystorage/js_projects/simple-html5-farm-game/src-texture",
+    "width": 2048,
+    "height": 2048,
+    "fixedSize": false,
+    "powerOfTwo": false,
+    "padding": 0,
+    "extrude": 0,
+    "allowRotation": false,
+    "allowTrim": true,
+    "trimMode": "trim",
+    "alphaThreshold": "0",
+    "detectIdentical": true,
+    "packer": "MaxRectsPacker",
+    "packerMethod": "Smart"
+  }
+}

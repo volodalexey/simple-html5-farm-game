@@ -35,6 +35,8 @@ npm run serve
 ## Open browser at [http://localhost:8866](http://localhost:8866)
 
 ## Assets
+`src-texture` folder refers to [Free Texture Packer](http://free-tex-packer.com/download/)
+
 - [Corn icon](https://thenounproject.com/icon/corn-1838227/)
 - [Egg icon](https://thenounproject.com/icon/egg-153392/)
 - [Money icon](https://thenounproject.com/icon/money-1524558/)
