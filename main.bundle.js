@@ -677,7 +677,6 @@ var ShopTileType;
 class ShopTile extends Tile_1.Tile {
     constructor(options) {
         super(options);
-        this.fontSize = 10;
         this.moneyOptions = {
             width: 10,
             height: 15,
@@ -685,6 +684,7 @@ class ShopTile extends Tile_1.Tile {
             marginTop: -7
         };
         this.textOptions = {
+            fontSize: 10,
             marginLeft: 25,
             marginTop: -5
         };
@@ -693,7 +693,7 @@ class ShopTile extends Tile_1.Tile {
         this.setup(options);
     }
     setup({ itemTextureResource, moneyTextureResource, iconOptions: { width, height, marginLeft, marginTop } }) {
-        const { cost, fontSize, moneyOptions, textOptions } = this;
+        const { cost, moneyOptions, textOptions } = this;
         const xCenter = this.posX + Math.round(this.width / 2);
         const yCenter = this.posY + Math.round(this.height / 2);
         const texture = new pixi_js_1.Sprite(itemTextureResource);
@@ -708,18 +708,22 @@ class ShopTile extends Tile_1.Tile {
         textIcon.position.x = xCenter + moneyOptions.marginLeft;
         textIcon.position.y = yCenter + moneyOptions.marginTop;
         this.addChild(textIcon);
-        const text = new pixi_js_1.Text(cost, {
-            fontFamily: 'Arial',
-            fontSize,
-            fill: 0x141414,
-            align: 'center'
+        const text = new pixi_js_1.BitmapText(String(cost), {
+            fontName: 'comic 30',
+            fontSize: textOptions.fontSize
         });
-        text.position.x = xCenter + textOptions.marginLeft;
-        text.position.y = yCenter + textOptions.marginTop;
+        text.x = xCenter + textOptions.marginLeft;
+        text.y = yCenter + textOptions.marginTop;
         this.addChild(text);
     }
 }
 exports.ShopTile = ShopTile;
+ShopTile.bitmapFont = pixi_js_1.BitmapFont.from('comic 30', {
+    fill: 0x141414,
+    fontFamily: 'Comic Sans MS',
+    fontWeight: 'bold',
+    fontSize: 30
+});
 ShopTile.TYPES = ShopTileType;
 
 
@@ -897,7 +901,6 @@ class StatusBarTile extends Tile_1.Tile {
         };
         this.textOptions = {
             fontSize: 20,
-            color: 0x141414,
             marginLeft: 0,
             marginTop: -10
         };
@@ -919,20 +922,18 @@ class StatusBarTile extends Tile_1.Tile {
         texture.position.x = xCenter + iconOptions.marginLeft;
         texture.position.y = yCenter + iconOptions.marginTop;
         this.addChild(texture);
-        const text = new pixi_js_1.Text(_value, {
-            fontFamily: 'Arial',
-            fontSize: textOptions.fontSize,
-            fill: textOptions.color,
-            align: 'center'
+        const text = new pixi_js_1.BitmapText(String(_value), {
+            fontName: 'comic 40',
+            fontSize: textOptions.fontSize
         });
-        text.position.x = xCenter + textOptions.marginLeft;
-        text.position.y = yCenter + textOptions.marginTop;
+        text.x = xCenter + textOptions.marginLeft;
+        text.y = yCenter + textOptions.marginTop;
         this.addChild(text);
         this._text = text;
     }
     updateValue(value) {
         this._value = value;
-        this._text.text = value;
+        this._text.text = String(value);
     }
     add(value) {
         this.updateValue(this._value + value);
@@ -942,6 +943,11 @@ class StatusBarTile extends Tile_1.Tile {
     }
 }
 exports.StatusBarTile = StatusBarTile;
+StatusBarTile.bitmapFont = pixi_js_1.BitmapFont.from('comic 40', {
+    fill: 0x141414,
+    fontFamily: 'Comic Sans MS',
+    fontSize: 40
+});
 StatusBarTile.TYPES = StatusType;
 
 
