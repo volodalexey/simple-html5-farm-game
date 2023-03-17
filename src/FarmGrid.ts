@@ -2,12 +2,6 @@ import { Container, type Texture } from 'pixi.js'
 import { FarmGridTile } from './FarmGridTile'
 import { logFarmGrid } from './logger'
 
-// orange eec643
-// black 141414
-// white eef0f2
-// blue 0d21a1
-// gray-blue 011638
-
 export interface IFarmGridOptions {
   textures: {
     grass: Texture

@@ -1,4 +1,4 @@
-import { Container, type Resource, type Texture } from 'pixi.js'
+import { Container, type Texture } from 'pixi.js'
 import { logFarmShop } from './logger'
 import { type Tile } from './models/Tile'
 import { ShopTile } from './ShopTile'

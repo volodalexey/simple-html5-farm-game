@@ -1,4 +1,4 @@
-import { type Resource, Sprite, Text, type Texture } from 'pixi.js'
+import { BitmapFont, BitmapText, Sprite, type Texture } from 'pixi.js'
 import { Tile, type ITileOptions } from './models/Tile'
 
 export interface IShopTileOptions extends ITileOptions {
@@ -21,11 +21,17 @@ enum ShopTileType {
 }
 
 export class ShopTile extends Tile {
+  static bitmapFont = BitmapFont.from('comic 30', {
+    fill: 0x141414,
+    fontFamily: 'Comic Sans MS',
+    fontWeight: 'bold',
+    fontSize: 30
+  })
+
   static TYPES = ShopTileType
 
   public type!: ShopTileType
   public cost!: number
-  public fontSize = 10
   public moneyOptions = {
     width: 10,
     height: 15,
@@ -34,6 +40,7 @@ export class ShopTile extends Tile {
   }
 
   public textOptions = {
+    fontSize: 10,
     marginLeft: 25,
     marginTop: -5
   }
@@ -52,7 +59,6 @@ export class ShopTile extends Tile {
   }: IShopTileOptions): void {
     const {
       cost,
-      fontSize,
       moneyOptions,
       textOptions
     } = this
@@ -73,14 +79,12 @@ export class ShopTile extends Tile {
     textIcon.position.y = yCenter + moneyOptions.marginTop
     this.addChild(textIcon)
 
-    const text = new Text(cost, {
-      fontFamily: 'Arial',
-      fontSize,
-      fill: 0x141414,
-      align: 'center'
+    const text = new BitmapText(String(cost), {
+      fontName: 'comic 30',
+      fontSize: textOptions.fontSize
     })
-    text.position.x = xCenter + textOptions.marginLeft
-    text.position.y = yCenter + textOptions.marginTop
+    text.x = xCenter + textOptions.marginLeft
+    text.y = yCenter + textOptions.marginTop
     this.addChild(text)
   }
 }

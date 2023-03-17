@@ -1,4 +1,4 @@
-import { type Resource, Text, type Texture, Sprite } from 'pixi.js'
+import { type Texture, Sprite, BitmapText, BitmapFont } from 'pixi.js'
 import { type ITileOptions, Tile } from './models/Tile'
 
 export interface IStatusBarTileOptions extends ITileOptions {
@@ -15,6 +15,12 @@ enum StatusType {
 }
 
 export class StatusBarTile extends Tile {
+  static bitmapFont = BitmapFont.from('comic 40', {
+    fill: 0x141414,
+    fontFamily: 'Comic Sans MS',
+    fontSize: 40
+  })
+
   static TYPES = StatusType
 
   public type!: StatusType
@@ -28,12 +34,11 @@ export class StatusBarTile extends Tile {
 
   public textOptions = {
     fontSize: 20,
-    color: 0x141414,
     marginLeft: 0,
     marginTop: -10
   }
 
-  private _text!: Text
+  private _text!: BitmapText
 
   private _value = 0
   constructor (options: IStatusBarTileOptions) {
@@ -65,21 +70,19 @@ export class StatusBarTile extends Tile {
     texture.position.y = yCenter + iconOptions.marginTop
     this.addChild(texture)
 
-    const text = new Text(_value, {
-      fontFamily: 'Arial',
-      fontSize: textOptions.fontSize,
-      fill: textOptions.color,
-      align: 'center'
+    const text = new BitmapText(String(_value), {
+      fontName: 'comic 40',
+      fontSize: textOptions.fontSize
     })
-    text.position.x = xCenter + textOptions.marginLeft
-    text.position.y = yCenter + textOptions.marginTop
+    text.x = xCenter + textOptions.marginLeft
+    text.y = yCenter + textOptions.marginTop
     this.addChild(text)
     this._text = text
   }
 
   updateValue (value: number): void {
     this._value = value
-    this._text.text = value
+    this._text.text = String(value)
   }
 
   add (value: number): void {
