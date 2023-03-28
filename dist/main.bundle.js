@@ -1435,7 +1435,7 @@ class Tile extends pixi_js_1.Container {
         this.on('mouseover', this.handleMouseOver);
         this.on('mouseout', this.handleMouseOut);
         this.onClick = onClick;
-        this.on('pointerdown', this.handleClick);
+        this.on('pointertap', this.handleClick);
     }
     fillColor(color) {
         this.graphics.clear();
