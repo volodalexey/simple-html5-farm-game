@@ -62,7 +62,7 @@ export class Tile extends Container {
     this.on('mouseover', this.handleMouseOver)
     this.on('mouseout', this.handleMouseOut)
     this.onClick = onClick
-    this.on('pointerdown', this.handleClick)
+    this.on('pointertap', this.handleClick)
   }
 
   fillColor (color: typeof Tile.COLORS[keyof typeof Tile.COLORS]): void {

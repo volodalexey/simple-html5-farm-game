@@ -14,5 +14,8 @@
   "[json]": {
     "editor.formatOnSave": false
   },
-  "editor.tabSize": 2
+  "editor.tabSize": 2,
+  "search.exclude": {
+    "**/dist": true
+  }
 }
